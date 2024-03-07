@@ -18,7 +18,6 @@ import { FciData } from './fciSdk/fciData';
 
 export class SpreadsheetService {
   private doc: GoogleSpreadsheet;
-  private loadPromise: Promise<void>;
   private bymaData: BymaData;
   private fciData: FciData;
 
@@ -34,7 +33,6 @@ export class SpreadsheetService {
       ],
     });
     this.doc = new GoogleSpreadsheet(SHEET_ID, auth);
-    this.loadPromise = this.doc.loadInfo();
     this.bymaData = new BymaData();
     this.fciData = new FciData();
   }
@@ -44,7 +42,7 @@ export class SpreadsheetService {
   }
 
   async init() {
-    await this.loadPromise;
+    await this.doc.loadInfo();
     await this.sheet.loadHeaderRow();
     console.log('Started SpreadsheetService');
   }

@@ -10,13 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.7",
-    "axios-retry": "^4.0.0",
-    "dotenv": "^16.4.5",
-    "google-auth-library": "^9.6.3",
-    "google-spreadsheet": "^4.1.1",
-    "https": "^1.0.0",
-    "typescript": "^5.3.3"
+    "axios": "1.6.7",
+    "axios-retry": "4.0.0",
+    "dotenv": "16.4.5",
+    "google-auth-library": "9.6.3",
+    "google-spreadsheet": "4.1.1",
+    "https": "1.0.0",
+    "typescript": "5.4.2"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -27,5 +27,8 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.0"
+  },
+  "volta": {
+    "node": "20.11.1"
   }
 }

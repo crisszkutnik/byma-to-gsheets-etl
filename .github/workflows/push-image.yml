@@ -37,3 +37,10 @@ jobs:
           push: true
           platforms: linux/arm64,linux/amd64
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+      - name: Delete untagged
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          package-type: 'container'
+          min-versions-to-keep: 0
+          delete-only-untagged-versions: true
